@@ -289,6 +289,6 @@ void save_final_time(FILE* ptr_write_file , float average_execution_time, int nu
 	fprintf(ptr_write_file, "%d", minutes);
 	fprintf(ptr_write_file, "%s", "m");
 	fprintf(ptr_write_file, "%.3lf", seconds_and_milis);
-	fprintf(ptr_write_file, "%s", "ms\n");
+	fprintf(ptr_write_file, "%s", "s\n");
 
 }
