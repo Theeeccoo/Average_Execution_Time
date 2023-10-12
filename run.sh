@@ -27,7 +27,7 @@ else
 fi
 
 # ** Compilation
-$compiler "-Wall" $magic_parser "-lm" "-o"$utils_path"/a.out"
+$compiler "-O3" "-Wall" $magic_parser "-lm" "-o"$utils_path"/a.out"
 $compiler $file_path $flags
 
 
