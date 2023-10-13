@@ -6,7 +6,7 @@ output_path=$bin_path"/output.txt"
 utils_path="`pwd`/utils"
 magic_parser=$utils_path"/magic_parser.c"
 
-file_path="`pwd`/silly_sort.c"
+file_path="`pwd`/mm.c"
 compiler="gcc"
 flags="-O3 -fopenmp"
 max_iter=$1
@@ -35,7 +35,8 @@ $compiler $file_path $flags
 for ((i = 1; i <= $max_iter; i++));
 	
 
-	do
+	do	
+		echo "A"
 		(time ./a.out $number_threads) 2>> $output_path;
 	done
 
@@ -45,3 +46,9 @@ cd "$utils_path"
 (./a.out $output_path $max_iter $number_threads)
 cd "$root_path"
 cat `pwd`"/result.txt"
+
+# ** 
+rm a.out
+cd "$utils_path"
+rm a.out
+cd "$root_path"
