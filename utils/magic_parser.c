@@ -272,7 +272,9 @@ void save_final_time(FILE* ptr_write_file , float average_execution_time, int nu
 	// Since average_execution_time is in seconds, if there is no minutes
 	// (average_execution_time < 60) it means that average_execution_time = seconds_and_milis
 	if ( minutes != 0 ) {
-		seconds_and_milis = minutes - average_execution_time;
+		seconds_and_milis = (minutes * 60) - average_execution_time;
+		if ( seconds_and_milis < 0 )
+			seconds_and_milis *= (-1);
 	} else {
 		seconds_and_milis = average_execution_time;
 	}
