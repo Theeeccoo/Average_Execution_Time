@@ -28,16 +28,17 @@ fi
 
 # ** Compilation
 $compiler "-O3" "-Wall" $magic_parser "-lm" "-o"$utils_path"/a.out"
-$compiler $file_path $flags
+$compiler $file_path $flags "-o" $bin_path"/code.out"
 
 
-
+cd "$bin_path"
+echo "Starting..."
 for ((i = 1; i <= $max_iter; i++));
 	
 
 	do	
-		echo "A"
-		(time ./a.out $number_threads) 2>> $output_path;
+		(time ./code.out $number_threads) 2>> $output_path;
+		echo "$i iteration finished. . ."
 	done
 
 
@@ -48,7 +49,7 @@ cd "$root_path"
 cat `pwd`"/result.txt"
 
 # ** 
-rm a.out
-cd "$utils_path"
-rm a.out
-cd "$root_path"
+rm $bin_path"/code.out"
+#cd "$utils_path"
+rm $utils_path"/a.out"
+#cd "$root_path"
