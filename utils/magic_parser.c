@@ -75,7 +75,7 @@ void read_file(char* path_to_file, int iterations_number, int number_of_used_thr
 
 		// Had to put this verification because it was reading an unwanted line in last iteration
 		// Feel free to improve it whenever a better solution is found.
-		if( strstr(buffer, string_to_find) != NULL) {
+		if( strstr(buffer, string_to_find) != NULL ) {
 			fix_fgets(buffer);
 			auxiliary[i++] = split_line(buffer);
 		}	
@@ -170,7 +170,7 @@ void fix_fgets(char* buffer){
 	size_t	buffer_length = strlen(buffer);
 	int	position = buffer_length - 1;
 	
-	if ( buffer_length > 0 && buffer[position] == '\n') {
+	if ( buffer_length > 0 && buffer[position] == '\n' ) {
 		buffer[position] = '\0';
 	}
 
